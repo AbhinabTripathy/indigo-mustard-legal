@@ -1,55 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Palette derived from the firm profile PDF:
+  - Page tint:        #EEF3FA (very light blue)
+  - Soft blue panel:  #DDE7F3
+  - Mid blue accent:  #3A6BA5
+  - Deep navy brand:  #17264D
+  - Ink black text:   #0A0A0A
+*/
+
 @layer base {
   :root {
-    --background: 210 100% 9%;
-    --foreground: 0 0% 96%;
+    --background: 214 47% 96%;         /* #EEF3FA page tint */
+    --foreground: 224 55% 10%;         /* deep navy ink */
 
-    --card: 203 100% 13%;
-    --card-foreground: 0 0% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 55% 10%;
 
-    --popover: 203 100% 13%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 55% 10%;
 
-    --primary: 44 100% 60%;
-    --primary-foreground: 210 100% 9%;
+    --primary: 224 55% 20%;            /* #17264D navy */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 203 100% 13%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 214 47% 92%;          /* soft blue panel */
+    --secondary-foreground: 224 55% 15%;
 
-    --muted: 205 100% 20%;
-    --muted-foreground: 210 20% 70%;
+    --muted: 214 40% 88%;
+    --muted-foreground: 224 20% 35%;
 
-    --accent: 42 100% 54%;
-    --accent-foreground: 210 100% 9%;
+    --accent: 212 47% 44%;             /* #3A6BA5 mid blue */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 96%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 205 60% 20%;
-    --input: 205 60% 20%;
-    --ring: 44 100% 60%;
+    --border: 214 30% 82%;
+    --input: 214 30% 82%;
+    --ring: 224 55% 20%;
 
     --radius: 0.5rem;
 
-    --oxford-blue: 210 100% 9%;
-    --prussian-blue: 203 100% 13%;
-    --indigo-dye: 205 100% 20%;
-    --mustard: 44 100% 60%;
-    --selective-yellow: 42 100% 54%;
+    /* Named brand tokens */
+    --navy: 224 55% 20%;
+    --navy-deep: 224 55% 12%;
+    --brand-blue: 212 47% 44%;
+    --blue-soft: 214 47% 92%;
+    --blue-tint: 214 47% 96%;
 
-    --sidebar-background: 210 100% 9%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 44 100% 60%;
-    --sidebar-primary-foreground: 210 100% 9%;
-    --sidebar-accent: 203 100% 13%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 205 60% 20%;
-    --sidebar-ring: 44 100% 60%;
+    /* Disclaimer gate — preserves BCI dark-blue mandate regardless of theme */
+    --disclaimer-bg: 210 100% 9%;      /* #011B2F Oxford Blue */
+    --disclaimer-panel: 203 100% 13%;  /* #002A45 Prussian Blue */
+    --disclaimer-fg: 0 0% 96%;
+    --disclaimer-cta: 44 100% 60%;     /* #FFD358 Mustard */
+    --disclaimer-cta-hover: 42 100% 54%; /* #FFB915 */
+
+    --sidebar-background: 214 47% 96%;
+    --sidebar-foreground: 224 55% 15%;
+    --sidebar-primary: 224 55% 20%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 47% 92%;
+    --sidebar-accent-foreground: 224 55% 15%;
+    --sidebar-border: 214 30% 82%;
+    --sidebar-ring: 224 55% 20%;
   }
 }
 
@@ -58,12 +75,18 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Lato', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lato', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
   }
 }

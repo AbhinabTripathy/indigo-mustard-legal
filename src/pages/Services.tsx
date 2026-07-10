@@ -1,41 +1,41 @@
-import { MessageSquare, Scale, FileText, Search, Users } from "lucide-react";
-
 const services = [
-  { icon: MessageSquare, title: "Legal Advisory", desc: "Strategic legal counsel on a wide range of matters including corporate transactions, regulatory issues, and risk assessment. We provide clear, actionable advice tailored to your specific circumstances and objectives." },
-  { icon: Scale, title: "Litigation Support", desc: "Comprehensive litigation services from pre-trial preparation through trial advocacy and appellate proceedings. Our approach combines thorough case analysis with effective courtroom strategy." },
-  { icon: FileText, title: "Documentation", desc: "Drafting and review of legal documents including agreements, memoranda of understanding, board resolutions, partnership deeds, and regulatory filings. Every document is prepared with precision and attention to detail." },
-  { icon: Search, title: "Due Diligence", desc: "Thorough due diligence investigations for corporate transactions, property acquisitions, and regulatory compliance. Our systematic approach ensures comprehensive risk identification and mitigation." },
-  { icon: Users, title: "Representation", desc: "Professional representation before courts, tribunals, regulatory bodies, and quasi-judicial authorities. We advocate with integrity and commitment across all forums." },
+  { title: "Litigation, Arbitration & Alternative Dispute Resolution", desc: "Representation and advocacy in trial and appellate forums, and in domestic arbitration and ADR proceedings." },
+  { title: "Criminal Defence & Prosecution", desc: "Handling of criminal proceedings, bail matters, and white-collar defence with diligence and discretion." },
+  { title: "Legal Consultations & Corporate Advisory", desc: "Considered legal opinions and strategic counsel across corporate, commercial and regulatory matters." },
+  { title: "Business Formation & Structuring", desc: "Guidance on choice of entity, incorporation, governance frameworks, and inter-party arrangements." },
+  { title: "Start-Up Legal Support", desc: "End-to-end support for early-stage ventures — from constitutional documents to founder and investor arrangements." },
+  { title: "Drafting, Review & Negotiation of Commercial Contracts", desc: "Precise drafting, redlining, and negotiation support across the spectrum of commercial agreements." },
+  { title: "Contract Lifecycle Management", desc: "End-to-end management of contracts from creation through execution, renewals and closure." },
+  { title: "Client Onboarding–Offboarding Process Flow", desc: "Design and documentation of internal onboarding and offboarding processes for institutional clients." },
+  { title: "Legal Audits of Running Businesses", desc: "Structured legal audits identifying compliance gaps, contractual exposures and risk mitigation." },
+  { title: "IP & Brand Registration, Protection & Litigation", desc: "Trademark, copyright and design registrations, along with enforcement and dispute representation." },
+  { title: "Regulatory & Compliance Advisory", desc: "Advisory on sector-specific and cross-cutting regulatory obligations across statutory frameworks." },
+  { title: "e-Discovery", desc: "Document review and eDiscovery services drawing on cross-border experience with US-based clients." },
 ];
 
 const Services = () => (
   <div>
-    <section className="py-20 md:py-28 bg-secondary">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">Services</h1>
-        <div className="w-24 h-0.5 bg-primary mx-auto mb-8" />
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Comprehensive legal services delivered with professionalism, discretion, and a commitment to excellence.
-        </p>
+    <section className="bg-blue-tint border-b border-border">
+      <div className="container mx-auto py-16 md:py-24">
+        <div className="text-xs uppercase tracking-[0.25em] text-accent mb-4">Services</div>
+        <h1 className="font-display font-black text-navy text-4xl md:text-5xl lg:text-6xl leading-[1] max-w-3xl">
+          Comprehensive legal &amp; allied services.
+        </h1>
+        <div className="mt-6 h-[3px] w-24 bg-accent" />
       </div>
     </section>
 
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="space-y-8">
-          {services.map((svc, i) => (
-            <div
-              key={svc.title}
-              className="flex gap-6 p-8 rounded-lg border border-border bg-secondary"
-            >
-              <div className="shrink-0">
-                <div className="w-14 h-14 rounded-full bg-indigo-dye flex items-center justify-center">
-                  <svc.icon size={24} className="text-primary" />
+    <section className="bg-background">
+      <div className="container mx-auto py-14 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {services.map((s, i) => (
+            <div key={s.title} className="bg-card border border-border rounded-sm p-7 hover:border-navy transition-colors">
+              <div className="flex items-baseline gap-4">
+                <div className="text-xs font-mono text-accent">{String(i + 1).padStart(2, "0")}</div>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-navy mb-2">{s.title}</h3>
+                  <p className="text-sm text-foreground/75 leading-relaxed">{s.desc}</p>
                 </div>
-              </div>
-              <div>
-                <h3 className="font-serif text-xl font-semibold text-foreground mb-3">{svc.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{svc.desc}</p>
               </div>
             </div>
           ))}

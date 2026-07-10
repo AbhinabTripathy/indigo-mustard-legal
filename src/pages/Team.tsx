@@ -1,51 +1,50 @@
-import { User } from "lucide-react";
+import pravin from "@/assets/pravin-hota.jpg.asset.json";
+import jibesh from "@/assets/jibesh-padhiary.jpg.asset.json";
+import baivav from "@/assets/baivav-mishra.jpg.asset.json";
+import asish from "@/assets/asish-samal.jpg.asset.json";
 
-const teamMembers = [
-  {
-    name: "Pravin Hota",
-    designation: "Founder & Principal Advocate",
-    bio: "Enrolled with the Bar Council of Odisha with extensive experience in corporate law, litigation, and arbitration.",
-  },
-  {
-    name: "Ananya Mishra",
-    designation: "Associate Advocate",
-    bio: "Specialises in civil litigation and regulatory compliance with a focus on commercial disputes.",
-  },
-  {
-    name: "Rajesh Patel",
-    designation: "Associate Advocate",
-    bio: "Handles criminal law matters and contract advisory services with thorough attention to detail.",
-  },
-  {
-    name: "Sneha Das",
-    designation: "Legal Researcher",
-    bio: "Supports the practice with in-depth legal research, case analysis, and documentation.",
-  },
+type Member = { name: string; role: string; image?: string; initials: string };
+
+const members: Member[] = [
+  { name: "Pravin Hota", role: "Principal Counsel, Head of Disputes", image: pravin.url, initials: "PH" },
+  { name: "P. Srivastav", role: "Corporate Lawyer & Contract Management Specialist", initials: "PS" },
+  { name: "D. Nayak", role: "Corporate Lawyer, e-Discovery & Document Review Expert", initials: "DN" },
+  { name: "Jibesh Kumar Padhiary", role: "Counsel, Disputes & Corporate", image: jibesh.url, initials: "JP" },
+  { name: "Baivav Mishra", role: "Counsel, Disputes & Corporate", image: baivav.url, initials: "BM" },
+  { name: "Asish Samal", role: "Legal Assistant and Regd. Advocate Clerk", image: asish.url, initials: "AS" },
 ];
 
 const Team = () => (
   <div>
-    <section className="py-20 md:py-28 bg-secondary">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">Our Team</h1>
-        <div className="w-24 h-0.5 bg-primary mx-auto mb-8" />
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          A dedicated team of legal professionals committed to providing considered and diligent legal counsel.
+    <section className="bg-blue-tint border-b border-border">
+      <div className="container mx-auto py-16 md:py-24">
+        <div className="text-xs uppercase tracking-[0.25em] text-accent mb-4">The Team</div>
+        <h1 className="font-display font-black text-navy text-4xl md:text-5xl lg:text-6xl leading-[1] max-w-3xl">
+          Diverse expertise, coordinated delivery.
+        </h1>
+        <div className="mt-6 h-[3px] w-24 bg-accent" />
+        <p className="mt-6 max-w-2xl text-foreground/75 leading-relaxed md:text-lg">
+          The Firm's members combine their diverse professional expertise to deliver end-to-end solutions that help businesses navigate legal issues effectively.
         </p>
       </div>
     </section>
 
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {teamMembers.map((member) => (
-            <div key={member.name} className="text-center p-8 rounded-lg border border-border bg-secondary">
-              <div className="w-24 h-24 rounded-full bg-indigo-dye flex items-center justify-center mx-auto mb-6">
-                <User size={40} className="text-primary" />
+    <section className="bg-background">
+      <div className="container mx-auto py-14 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {members.map((m) => (
+            <div key={m.name} className="bg-card border border-border rounded-sm p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="mx-auto w-32 h-32 rounded-full overflow-hidden bg-blue-soft flex items-center justify-center border-2 border-blue-soft">
+                {m.image ? (
+                  <img src={m.image} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
+                ) : (
+                  <span className="font-display text-3xl font-bold text-navy/60">{m.initials}</span>
+                )}
               </div>
-              <h3 className="font-serif text-lg font-semibold text-foreground mb-1">{member.name}</h3>
-              <p className="text-primary text-sm font-medium mb-3">{member.designation}</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">{member.bio}</p>
+              <div className="mt-5 pb-3 border-b border-border">
+                <h3 className="font-display font-bold text-navy text-lg">{m.name}</h3>
+              </div>
+              <p className="mt-3 text-sm italic text-muted-foreground leading-snug">{m.role}</p>
             </div>
           ))}
         </div>
