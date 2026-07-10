@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "5863ff7e-32c7-4465-9b90-6df2da449231",
-  "project_id": "09b73d93-3b6c-449c-87e9-13032cb1518b",
-  "url": "/__l5e/assets-v1/5863ff7e-32c7-4465-9b90-6df2da449231/hero-skyscraper.png",
-  "r2_key": "a/v1/09b73d93-3b6c-449c-87e9-13032cb1518b/5863ff7e-32c7-4465-9b90-6df2da449231/hero-skyscraper.png",
-  "original_filename": "hero-skyscraper.png",
-  "size": 13185,
   "content_type": "image/png",
-  "created_at": "2026-07-10T08:40:03Z"
+  "created_at": "2026-07-10T08:40:03Z",
+  "original_filename": "hero-skyscraper.png",
+  "project_id": "cefa569e-5ff4-4284-b596-8e0cdfaab41b",
+  "r2_key": "a/v1/cefa569e-5ff4-4284-b596-8e0cdfaab41b/5863ff7e-32c7-4465-9b90-6df2da449231/hero-skyscraper.png",
+  "size": 13185,
+  "url": "/__l5e/assets-v1/5863ff7e-32c7-4465-9b90-6df2da449231/hero-skyscraper.png",
+  "version": 1
 }

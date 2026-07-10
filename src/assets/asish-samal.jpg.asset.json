@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "a47e5fc9-c0a0-4f33-b255-047f5c4a03bc",
-  "project_id": "09b73d93-3b6c-449c-87e9-13032cb1518b",
-  "url": "/__l5e/assets-v1/a47e5fc9-c0a0-4f33-b255-047f5c4a03bc/asish-samal.jpg",
-  "r2_key": "a/v1/09b73d93-3b6c-449c-87e9-13032cb1518b/a47e5fc9-c0a0-4f33-b255-047f5c4a03bc/asish-samal.jpg",
-  "original_filename": "asish-samal.jpg",
-  "size": 32577,
   "content_type": "image/jpeg",
-  "created_at": "2026-07-10T08:40:01Z"
+  "created_at": "2026-07-10T08:40:01Z",
+  "original_filename": "asish-samal.jpg",
+  "project_id": "cefa569e-5ff4-4284-b596-8e0cdfaab41b",
+  "r2_key": "a/v1/cefa569e-5ff4-4284-b596-8e0cdfaab41b/a47e5fc9-c0a0-4f33-b255-047f5c4a03bc/asish-samal.jpg",
+  "size": 32577,
+  "url": "/__l5e/assets-v1/a47e5fc9-c0a0-4f33-b255-047f5c4a03bc/asish-samal.jpg",
+  "version": 1
 }

@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "8395fb95-b9d5-4aae-af60-a33bd1f89f52",
-  "project_id": "09b73d93-3b6c-449c-87e9-13032cb1518b",
-  "url": "/__l5e/assets-v1/8395fb95-b9d5-4aae-af60-a33bd1f89f52/baivav-mishra.jpg",
-  "r2_key": "a/v1/09b73d93-3b6c-449c-87e9-13032cb1518b/8395fb95-b9d5-4aae-af60-a33bd1f89f52/baivav-mishra.jpg",
-  "original_filename": "baivav-mishra.jpg",
-  "size": 29379,
   "content_type": "image/jpeg",
-  "created_at": "2026-07-10T08:39:58Z"
+  "created_at": "2026-07-10T08:39:58Z",
+  "original_filename": "baivav-mishra.jpg",
+  "project_id": "cefa569e-5ff4-4284-b596-8e0cdfaab41b",
+  "r2_key": "a/v1/cefa569e-5ff4-4284-b596-8e0cdfaab41b/8395fb95-b9d5-4aae-af60-a33bd1f89f52/baivav-mishra.jpg",
+  "size": 29379,
+  "url": "/__l5e/assets-v1/8395fb95-b9d5-4aae-af60-a33bd1f89f52/baivav-mishra.jpg",
+  "version": 1
 }
