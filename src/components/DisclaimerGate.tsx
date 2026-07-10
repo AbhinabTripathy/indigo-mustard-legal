@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 
 const DisclaimerGate = ({ children }: { children: React.ReactNode }) => {
   const [agreed, setAgreed] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     if (sessionStorage.getItem("disclaimer_agreed") === "true") {
       setAgreed(true);
     }
+    setReady(true);
   }, []);
 
   const handleAgree = () => {
@@ -14,15 +16,16 @@ const DisclaimerGate = ({ children }: { children: React.ReactNode }) => {
     setAgreed(true);
   };
 
+  if (!ready) return null;
   if (agreed) return <>{children}</>;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background p-4">
-      <div className="max-w-2xl w-full rounded-lg border border-border bg-secondary p-8 md:p-12 shadow-2xl">
-        <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary text-center mb-8 tracking-wide">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-disclaimer-bg p-4">
+      <div className="max-w-2xl w-full rounded-lg border border-disclaimer-cta/30 bg-disclaimer-panel p-8 md:p-12 shadow-2xl">
+        <h2 className="text-2xl md:text-3xl font-semibold text-disclaimer-cta text-center mb-8 tracking-wide">
           DISCLAIMER AND CONFIRMATION
         </h2>
-        <div className="space-y-4 text-sm md:text-base leading-relaxed text-muted-foreground max-h-[50vh] overflow-y-auto pr-2">
+        <div className="space-y-4 text-sm md:text-base leading-relaxed text-disclaimer-fg/85 max-h-[50vh] overflow-y-auto pr-2">
           <p>
             Current rules of the Bar Council of India impose restrictions on maintaining a web page and do not permit lawyers to provide information concerning their areas of practice. Pravin Hota is, therefore, constrained from providing any further information on this web page.
           </p>
@@ -47,7 +50,7 @@ const DisclaimerGate = ({ children }: { children: React.ReactNode }) => {
         <div className="mt-8 flex justify-center">
           <button
             onClick={handleAgree}
-            className="px-10 py-3 bg-primary text-primary-foreground font-semibold text-lg rounded tracking-widest hover:bg-accent transition-colors duration-200"
+            className="px-10 py-3 bg-disclaimer-cta text-disclaimer-bg font-semibold text-lg rounded tracking-widest hover:bg-disclaimer-cta-hover transition-colors duration-200"
           >
             I AGREE
           </button>

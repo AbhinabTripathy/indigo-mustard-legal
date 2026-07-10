@@ -1,38 +1,68 @@
-import { Scale, Briefcase, Shield, Gavel, FileText, BookOpen } from "lucide-react";
+import { Briefcase, Scale, FileText, Users, Radio, Home, Receipt, Gavel, GraduationCap, Lightbulb, ShieldCheck } from "lucide-react";
 
 const areas = [
-  { icon: Briefcase, title: "Corporate Law", desc: "Advisory on corporate governance, mergers, acquisitions, joint ventures, and business restructuring. Comprehensive support for corporate compliance and regulatory matters." },
-  { icon: Scale, title: "Civil Litigation", desc: "Representation in civil disputes including property matters, contractual disputes, recovery proceedings, and constitutional matters across trial and appellate courts." },
-  { icon: Gavel, title: "Criminal Law", desc: "Defence and advisory services across the spectrum of criminal proceedings, including bail applications, trial representation, and appellate advocacy." },
-  { icon: Shield, title: "Arbitration", desc: "Domestic and international arbitration services including drafting of arbitration clauses, conduct of proceedings, and enforcement of arbitral awards." },
-  { icon: FileText, title: "Contract Advisory", desc: "Comprehensive contract services including drafting, review, negotiation, and advisory on commercial agreements, service contracts, and employment agreements." },
-  { icon: BookOpen, title: "Regulatory Compliance", desc: "Guidance on compliance with statutory and regulatory frameworks including environmental law, labour law, corporate governance norms, and industry-specific regulations." },
+  { icon: Briefcase, title: "Corporate Law" },
+  { icon: Scale, title: "Dispute Resolution & Arbitration" },
+  { icon: FileText, title: "Writs" },
+  { icon: Users, title: "Employment, Service & Labour Law" },
+  { icon: Radio, title: "Technology, Media & Telecommunication" },
+  { icon: Home, title: "Revenue & Real Estate" },
+  { icon: Receipt, title: "Indirect Tax & GST" },
+  { icon: Gavel, title: "Criminal Law & White-Collar Crime" },
+  { icon: GraduationCap, title: "Educational Institutions & Schools" },
+  { icon: Lightbulb, title: "Intellectual Property Law" },
+  { icon: ShieldCheck, title: "Consumer Protection" },
+];
+
+const sectors = [
+  "Telecom, Media & Technology",
+  "Education",
+  "Food & Hospitality",
+  "Health & Wellness",
+  "Real Estate & Construction",
+  "Power & Energy",
+  "Domestic & International Trade",
+  "Private Security",
 ];
 
 const PracticeAreas = () => (
   <div>
-    <section className="py-20 md:py-28 bg-secondary">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">Practice Areas</h1>
-        <div className="w-24 h-0.5 bg-primary mx-auto mb-8" />
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          A broad spectrum of legal services delivered with depth of knowledge and professional rigour.
-        </p>
+    <section className="bg-blue-tint border-b border-border">
+      <div className="container mx-auto py-16 md:py-24">
+        <div className="text-xs uppercase tracking-[0.25em] text-accent mb-4">Practice</div>
+        <h1 className="font-display font-black text-navy text-4xl md:text-5xl lg:text-6xl leading-[1] max-w-3xl">
+          Practice areas &amp; sectors we serve.
+        </h1>
+        <div className="mt-6 h-[3px] w-24 bg-accent" />
       </div>
     </section>
 
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {areas.map((area) => (
-            <div
-              key={area.title}
-              className="group p-8 rounded-lg border border-border bg-secondary hover:bg-indigo-dye transition-all duration-300"
-            >
-              <area.icon size={36} className="text-primary mb-5" />
-              <h3 className="font-serif text-xl font-semibold text-foreground mb-3">{area.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{area.desc}</p>
-              <div className="mt-5 h-0.5 w-0 group-hover:w-full bg-primary transition-all duration-300" />
+    <section className="bg-background">
+      <div className="container mx-auto py-14 md:py-16">
+        <div className="text-xs uppercase tracking-[0.22em] text-accent mb-2">Practice Areas</div>
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-navy mb-10">Breadth of practice</h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {areas.map((a) => (
+            <div key={a.title} className="group flex items-start gap-4 p-6 bg-card border border-border rounded-sm hover:border-navy hover:shadow-md transition-all">
+              <div className="w-10 h-10 shrink-0 rounded-sm bg-blue-soft flex items-center justify-center group-hover:bg-navy transition-colors">
+                <a.icon size={18} className="text-navy group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="font-display text-base font-semibold text-navy pt-1.5">{a.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-blue-tint">
+      <div className="container mx-auto py-14 md:py-16">
+        <div className="text-xs uppercase tracking-[0.22em] text-accent mb-2">Sectors / Industries</div>
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-navy mb-10">Industries we serve</h2>
+        <div className="flex flex-wrap gap-3">
+          {sectors.map((s) => (
+            <div key={s} className="px-5 py-3 bg-card border border-border rounded-sm text-navy font-medium">
+              {s}
             </div>
           ))}
         </div>

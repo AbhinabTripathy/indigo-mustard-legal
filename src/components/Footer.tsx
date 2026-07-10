@@ -1,63 +1,76 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Globe } from "lucide-react";
+import BrandMark from "./BrandMark";
 
 const Footer = () => (
-  <footer className="bg-background border-t border-primary/30">
-    <div className="container mx-auto px-4 py-12 md:py-16">
+  <footer className="bg-navy text-white/85">
+    <div className="container mx-auto py-14 md:py-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <h3 className="font-serif text-xl font-bold text-primary mb-4">Pravin Hota</h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            Advocate &amp; Legal Consultant providing professional legal services with integrity, precision, and commitment to excellence.
+          <div className="flex items-center gap-3 mb-4">
+            <BrandMark className="h-9 w-9" />
+            <div className="leading-tight">
+              <div className="text-[10px] uppercase tracking-[0.18em] text-white/60">Law Offices of</div>
+              <div className="font-display font-bold text-white text-lg">Pravin Hota</div>
+            </div>
+          </div>
+          <p className="text-sm leading-relaxed text-white/70">
+            A full-service law firm delivering comprehensive legal and allied services to businesses at every stage — from formation to expansion.
           </p>
         </div>
+
         <div>
-          <h4 className="font-serif text-lg font-semibold text-foreground mb-4">Quick Links</h4>
-          <div className="space-y-2">
+          <h4 className="font-display text-sm font-semibold text-white uppercase tracking-widest mb-4">Explore</h4>
+          <div className="grid grid-cols-2 gap-y-2">
             {[
-              { label: "About Us", path: "/about" },
+              { label: "About", path: "/about" },
+              { label: "Team", path: "/team" },
               { label: "Practice Areas", path: "/practice-areas" },
               { label: "Services", path: "/services" },
-              { label: "Contact Us", path: "/contact" },
-            ].map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                {link.label}
+              { label: "Contract Management", path: "/contract-management" },
+              { label: "Contact", path: "/contact" },
+            ].map((l) => (
+              <Link key={l.path} to={l.path} className="text-sm text-white/70 hover:text-white transition-colors">
+                {l.label}
               </Link>
             ))}
           </div>
         </div>
+
         <div>
-          <h4 className="font-serif text-lg font-semibold text-foreground mb-4">Contact</h4>
-          <div className="space-y-3 text-sm text-muted-foreground">
-            <div className="flex items-start gap-2">
-              <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
-              <span>DLF Cybercity, Bhubaneswar, Odisha, India</span>
+          <h4 className="font-display text-sm font-semibold text-white uppercase tracking-widest mb-4">Reach Us</h4>
+          <div className="space-y-3 text-sm">
+            <div className="flex items-start gap-3">
+              <MapPin size={16} className="mt-0.5 shrink-0 text-white/60" />
+              <span>Bhubaneswar, Odisha, India</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail size={16} className="text-primary shrink-0" />
-              <a href="mailto:pravinkumarhota@gmail.com" className="hover:text-primary transition-colors">
-                pravinkumarhota@gmail.com
+            <div className="flex items-center gap-3">
+              <Phone size={16} className="shrink-0 text-white/60" />
+              <div className="flex flex-col">
+                <a href="tel:+918114394499" className="hover:text-white transition-colors">+91 8114394499</a>
+                <a href="tel:+917681857934" className="hover:text-white transition-colors">+91 7681857934</a>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Mail size={16} className="shrink-0 text-white/60" />
+              <a href="mailto:office@pravinhota.in" className="hover:text-white transition-colors">
+                office@pravinhota.in
               </a>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone size={16} className="text-primary shrink-0" />
-              <a href="tel:+918114394499" className="hover:text-primary transition-colors">
-                +91 81143 94499
-              </a>
+            <div className="flex items-center gap-3">
+              <Globe size={16} className="shrink-0 text-white/60" />
+              <span>www.pravinhota.in</span>
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-10 pt-6 border-t border-border text-center">
-        <p className="text-xs text-muted-foreground mb-2">
-          © {new Date().getFullYear()} Pravin Hota. All rights reserved.
+
+      <div className="mt-10 pt-6 border-t border-white/15 text-center">
+        <p className="text-xs text-white/60 mb-2">
+          © {new Date().getFullYear()} Law Offices of Pravin Hota. All rights reserved.
         </p>
-        <p className="text-xs text-muted-foreground/60 max-w-2xl mx-auto">
-          Disclaimer: This website is meant purely for informational purposes and is not an advertisement or solicitation. The information provided does not constitute legal advice and should not be relied upon as such.
+        <p className="text-[11px] text-white/50 max-w-3xl mx-auto leading-relaxed">
+          Disclaimer: This website is meant purely for informational purposes and is not intended to advertise, solicit clients, or invite a lawyer-client relationship. The contents do not constitute legal advice; please seek independent legal advice for your specific matters.
         </p>
       </div>
     </div>
