@@ -1,7 +1,7 @@
-import pravin from "@/assets/pravin-hota.jpg.asset.json";
-import jibesh from "@/assets/jibesh-padhiary.jpg.asset.json";
-import baivav from "@/assets/baivav-mishra.jpg.asset.json";
-import asish from "@/assets/asish-samal.jpg.asset.json";
+import pravin from "@/assets/pravin-hota-new.jpg.asset.json";
+import jibesh from "@/assets/jibesh-padhiary-new.jpg.asset.json";
+import baivav from "@/assets/baivav-mishra-new.jpg.asset.json";
+import ashish from "@/assets/ashish-samal.jpg.asset.json";
 
 type Member = { name: string; role: string; image?: string; initials: string };
 
@@ -10,8 +10,8 @@ const members: Member[] = [
   { name: "P. Srivastav", role: "Corporate Lawyer & Contract Management Specialist", initials: "PS" },
   { name: "D. Nayak", role: "Corporate Lawyer, e-Discovery & Document Review Expert", initials: "DN" },
   { name: "Jibesh Kumar Padhiary", role: "Counsel, Disputes & Corporate", image: jibesh.url, initials: "JP" },
-  { name: "Baivav Mishra", role: "Counsel, Disputes & Corporate", image: baivav.url, initials: "BM" },
-  { name: "Asish Samal", role: "Legal Assistant and Regd. Advocate Clerk", image: asish.url, initials: "AS" },
+  { name: "Baivav Mishra", role: "Of-Counsel", image: baivav.url, initials: "BM" },
+  { name: "Ashish Samal", role: "Registered Legal Assistant, High Court of Orissa", image: ashish.url, initials: "AS" },
 ];
 
 const Team = () => (
