@@ -15,74 +15,94 @@ const practiceAreas = [
 const Index = () => (
   <div>
     {/* HERO — light-blue tint, deconstructed geometric layout inspired by the PDF cover */}
-    <section className="relative bg-blue-tint overflow-hidden">
-      {/* Geometric accent panels */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute right-0 top-0 w-2/3 h-full bg-blue-soft/70"
-             style={{ clipPath: "polygon(30% 0, 100% 0, 100% 100%, 0% 100%)" }} />
-        <div className="absolute right-0 bottom-0 w-1/3 h-1/2 bg-navy/90"
-             style={{ clipPath: "polygon(60% 0, 100% 0, 100% 100%, 0% 100%)" }} />
+    <section className="relative bg-navy-deep overflow-hidden">
+      {/* Cover image with the dark geometric corner */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <img
+          src={heroImg.url}
+          alt=""
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/20" />
+        {/* Black diagonal panel echoing the cover artwork */}
+        <div
+          className="absolute right-0 bottom-0 w-1/2 h-3/5 bg-navy-deep"
+          style={{ clipPath: "polygon(45% 0, 100% 0, 100% 100%, 0% 100%)" }}
+        />
       </div>
 
-      <div className="container mx-auto relative py-16 md:py-24 lg:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          <div className="lg:col-span-6 animate-fade-in">
-            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-4">Est. Bhubaneswar · 2026</div>
-            <h1 className="font-display font-black text-navy leading-[0.95] text-[2.5rem] sm:text-5xl lg:text-6xl xl:text-7xl">
+      <div className="container mx-auto relative py-20 md:py-28 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 animate-fade-in">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-full bg-accent/15 blur-md" aria-hidden="true" />
+                <img
+                  src={logoMark.url}
+                  alt="Law Offices of Pravin Hota emblem"
+                  className="relative w-14 h-14 md:w-16 md:h-16 object-contain drop-shadow-lg"
+                />
+              </div>
+              <div className="h-10 w-px bg-white/25" />
+              <div className="text-[11px] uppercase tracking-[0.3em] text-white/70 leading-relaxed">
+                Advocates &amp; Legal Consultants<br />Bhubaneswar
+              </div>
+            </div>
+
+            <h1 className="font-display font-black text-white leading-[0.95] text-[2.5rem] sm:text-5xl lg:text-6xl xl:text-7xl">
               LAW OFFICES OF<br />
-              <span className="text-navy-deep">PRAVIN HOTA</span>
+              <span className="text-accent">PRAVIN HOTA</span>
             </h1>
             <div className="mt-6 h-[3px] w-24 bg-accent" />
-            <p className="mt-6 text-base md:text-lg text-foreground/75 max-w-xl leading-relaxed">
+            <p className="mt-6 text-base md:text-lg text-white/75 max-w-xl leading-relaxed">
               A full-service law firm delivering comprehensive legal and allied services to businesses at every stage — from formation to expansion.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white rounded-md font-medium hover:bg-navy-deep transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-navy-deep rounded-md font-medium hover:bg-accent/90 transition-colors"
               >
                 Get in Touch <ArrowRight size={16} />
               </Link>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-navy/30 text-navy rounded-md font-medium hover:bg-blue-soft transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white rounded-md font-medium hover:bg-white/10 transition-colors"
               >
                 About the Firm
               </Link>
             </div>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-              <div className="flex items-center gap-2 text-foreground/80">
+              <div className="flex items-center gap-2 text-white/80">
                 <Phone size={15} className="text-accent" />
                 8114394499, 7681857934
               </div>
-              <div className="flex items-center gap-2 text-foreground/80">
+              <div className="flex items-center gap-2 text-white/80">
                 <Mail size={15} className="text-accent" />
                 office@pravinhota.in
               </div>
-              <div className="flex items-center gap-2 text-foreground/80">
+              <div className="flex items-center gap-2 text-white/80">
                 <Globe size={15} className="text-accent" />
                 www.pravinhota.in
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-sm overflow-hidden shadow-2xl">
-              <img
-                src={heroImg.url}
-                alt="Modern glass skyscrapers reaching towards a bright sky"
-                className="w-full h-[380px] md:h-[480px] object-cover"
-                loading="eager"
-              />
-            </div>
-            <div className="absolute -bottom-5 -left-5 w-20 h-20 bg-accent/90 hidden md:block" />
-            <div className="absolute -top-5 -right-5 w-16 h-16 border-4 border-navy hidden md:block" />
+          {/* Oversized watermark emblem on the dark panel */}
+          <div className="lg:col-span-5 hidden lg:flex justify-end">
+            <img
+              src={logoMark.url}
+              alt=""
+              aria-hidden="true"
+              className="w-72 xl:w-96 object-contain opacity-90 drop-shadow-2xl"
+            />
           </div>
         </div>
       </div>
     </section>
+
 
     {/* INTRO STRIP */}
     <section className="bg-background border-b border-border">
