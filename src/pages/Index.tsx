@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Mail, Globe, Scale, Briefcase, FileText, Shield, Gavel, BookOpen } from "lucide-react";
-import heroImg from "@/assets/hero-skyscraper.png.asset.json";
+import heroImg from "@/assets/hero-cover.png.asset.json";
+import logoMark from "@/assets/logo-mark.png.asset.json";
 
 const practiceAreas = [
   { icon: Briefcase, title: "Corporate Law" },
